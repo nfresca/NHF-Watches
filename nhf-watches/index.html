@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NHF Watches — Relojes de alta gama al mejor precio. Rolex, Omega, Tudor, TAG Heuer y más." />
+  <title>NHF Watches — Relojes de Alta Gama</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner container">
+
+      <a href="#inicio" class="navbar__logo">NHF <span>Watches</span></a>
+
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="#inicio"    class="nav-link">Inicio</a></li>
+        <li><a href="#coleccion" class="nav-link">Colección</a></li>
+        <li><a href="#nosotros"  class="nav-link">Nosotros</a></li>
+        <li><a href="#contacto"  class="nav-link">Contacto</a></li>
+      </ul>
+
+      <button
+        class="navbar__hamburger"
+        id="hamburger"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero" id="inicio" aria-label="Portada">
+
+      <!-- Decorative watch SVG -->
+      <div class="hero__watch-ring" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" stroke="#c9a84c" stroke-width="1"/>
+          <circle cx="200" cy="200" r="140" stroke="#c9a84c" stroke-width="0.5"/>
+          <circle cx="200" cy="200" r="100" stroke="#c9a84c" stroke-width="0.5"/>
+          <!-- Hour marks -->
+          <line x1="200" y1="25" x2="200" y2="45" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="200" y1="355" x2="200" y2="375" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="25" y1="200" x2="45" y2="200" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="355" y1="200" x2="375" y2="200" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="326" y1="74" x2="311" y2="89" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="74" y1="326" x2="89" y2="311" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="74" y1="74" x2="89" y2="89" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="326" y1="326" x2="311" y2="311" stroke="#c9a84c" stroke-width="1.5"/>
+          <!-- Hands -->
+          <line x1="200" y1="200" x2="200" y2="110" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+          <line x1="200" y1="200" x2="260" y2="200" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="200" cy="200" r="5" fill="#c9a84c"/>
+          <!-- Strap top -->
+          <rect x="176" y="10" width="48" height="24" rx="4" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
+          <!-- Strap bottom -->
+          <rect x="176" y="366" width="48" height="24" rx="4" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="hero__content reveal">
+          <p class="hero__eyebrow">Colección 2026</p>
+          <h1 class="hero__title">
+            Los mejores relojes<br />
+            <em>al mejor precio.</em>
+          </h1>
+          <p class="hero__subtitle">
+            Rolex, Omega, Tudor, TAG Heuer y más. Relojes de alta gama
+            seleccionados para quienes saben lo que quieren.
+          </p>
+          <div class="hero__cta">
+            <a href="#coleccion" class="btn btn--primary">Ver Colección</a>
+            <a href="#nosotros"  class="btn btn--outline">Quiénes Somos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         COLLECTION
+    ══════════════════════════════════════════ -->
+    <section class="products" id="coleccion" aria-label="Colección de relojes">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Nuestra Selección</p>
+          <h2 class="section-title">Colección</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="products__filters reveal" id="productFilters" role="group" aria-label="Filtrar por categoría">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="Clásico">Clásico</button>
+          <button class="filter-btn" data-filter="Sport">Sport</button>
+          <button class="filter-btn" data-filter="Luxury">Luxury</button>
+        </div>
+
+        <!-- Product cards are rendered by JS -->
+        <div class="products__grid" id="productsGrid" role="list" aria-live="polite"></div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ABOUT / NOSOTROS
+    ══════════════════════════════════════════ -->
+    <section class="about" id="nosotros" aria-label="Sobre NHF Watches">
+      <div class="container">
+        <div class="about__grid">
+
+          <div class="about__content">
+            <div class="reveal">
+              <p class="about__eyebrow">Quiénes Somos</p>
+              <h2 class="about__title">NHF Watches</h2>
+              <div class="gold-line"></div>
+            </div>
+            <p class="about__text reveal" style="--delay:100ms">
+              Somos una tienda especializada en la reventa de relojes de alta gama.
+              No fabricamos ni ensamblamos: simplemente te conectamos con las piezas
+              más icónicas del mundo, a precios competitivos y con total transparencia.
+            </p>
+            <p class="about__text reveal" style="--delay:150ms">
+              Rolex, Omega, Tudor, TAG Heuer y otras marcas de primer nivel. Si lo buscás,
+              lo tenemos. Si no está en el catálogo, consultanos directamente por WhatsApp.
+            </p>
+
+            <div class="about__values">
+              <div class="value-item reveal" style="--delay:200ms">
+                <span class="value-icon">◈</span>
+                <h3>Selección</h3>
+                <p>Solo marcas y modelos de reconocida trayectoria y valor en el mercado.</p>
+              </div>
+              <div class="value-item reveal" style="--delay:280ms">
+                <span class="value-icon">◎</span>
+                <h3>Precio</h3>
+                <p>Los precios más competitivos del mercado, sin intermediarios innecesarios.</p>
+              </div>
+              <div class="value-item reveal" style="--delay:360ms">
+                <span class="value-icon">◇</span>
+                <h3>Confianza</h3>
+                <p>Transparencia total en cada operación. Tu satisfacción es nuestra prioridad.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image placeholder -->
+          <div class="about__image-box reveal" style="--delay:200ms" aria-hidden="true">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="80" stroke="#c9a84c" stroke-width="1"/>
+              <circle cx="100" cy="100" r="60" stroke="#c9a84c" stroke-width="0.5"/>
+              <line x1="100" y1="24" x2="100" y2="38" stroke="#c9a84c" stroke-width="2"/>
+              <line x1="100" y1="162" x2="100" y2="176" stroke="#c9a84c" stroke-width="2"/>
+              <line x1="24"  y1="100" x2="38"  y2="100" stroke="#c9a84c" stroke-width="2"/>
+              <line x1="162" y1="100" x2="176" y2="100" stroke="#c9a84c" stroke-width="2"/>
+              <line x1="100" y1="100" x2="100" y2="58"  stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+              <line x1="100" y1="100" x2="128" y2="100" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="100" cy="100" r="4" fill="#c9a84c"/>
+              <rect x="88" y="8"   width="24" height="14" rx="3" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
+              <rect x="88" y="178" width="24" height="14" rx="3" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
+            </svg>
+            <div class="about__image-decoration"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════════ -->
+    <section class="contact" id="contacto" aria-label="Contacto">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Estamos Aquí</p>
+          <h2 class="section-title">Contacto</h2>
+          <div class="section-divider"></div>
+          <p style="color:var(--color-text-muted); margin-top:1.5rem; font-size:var(--text-sm); max-width:480px; margin-inline:auto; line-height:1.7;">
+            ¿Te interesa algún modelo? Escríbenos directamente y te responderemos a la brevedad.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/XXXXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card contact-card--whatsapp reveal"
+            aria-label="Contactar por WhatsApp"
+          >
+            <div class="contact-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            <span class="contact-card__label">WhatsApp</span>
+            <span class="contact-card__value">Escríbenos</span>
+            <span class="btn btn--whatsapp contact-card__cta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Chatear ahora
+            </span>
+          </a>
+
+          <!-- Email -->
+          <a
+            href="mailto:info@nhfwatches.com"
+            class="contact-card contact-card--email reveal"
+            style="--delay:100ms"
+            aria-label="Contactar por email"
+          >
+            <div class="contact-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <span class="contact-card__label">Email</span>
+            <span class="contact-card__value">info@nhfwatches.com</span>
+            <span class="btn btn--outline contact-card__cta">Enviar mensaje</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a href="#inicio" class="footer__logo">NHF <span>Watches</span></a>
+        <p>
+          Relojes de precisión para quienes aprecian la excelencia artesanal.
+          El tiempo, redefinido.
+        </p>
+      </div>
+
+      <!-- Nav links -->
+      <nav aria-label="Footer navigation">
+        <p class="footer__nav-title">Navegación</p>
+        <ul class="footer__nav-links" role="list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#coleccion">Colección</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Social -->
+      <div>
+        <p class="footer__social-title">Síguenos</p>
+        <div class="footer__social-links">
+
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram de NHF Watches">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook de NHF Watches">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/XXXXXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de NHF Watches">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 NHF Watches. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS (products.js debe cargarse antes que main.js) -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

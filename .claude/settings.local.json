@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Notion__notion-search",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "Bash(python3:*)",
+      "Bash(python -c \"print\\(''hello''\\)\")",
+      "Bash(py -3 -c \"print\\(''hello''\\)\")",
+      "Bash(where python:*)",
+      "Bash(py:*)",
+      "mcp__claude_ai_Notion__notion-update-page"
+    ]
+  }
+}
