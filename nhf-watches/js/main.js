@@ -31,11 +31,12 @@ function cardHTML(product, index) {
     ? '<span class="card__badge">' + product.badge + '</span>'
     : '';
 
-  // Image: real photo with SVG fallback
+  // Image: first photo with SVG fallback
+  var firstImage = product.images && product.images.length ? product.images[0] : null;
   var imageHTML = '';
-  if (product.image) {
+  if (firstImage) {
     imageHTML = '<img'
-      + ' src="' + product.image + '"'
+      + ' src="' + firstImage + '"'
       + ' alt="' + product.name + '"'
       + ' class="card__image"'
       + ' loading="lazy"'
@@ -46,52 +47,100 @@ function cardHTML(product, index) {
     imageHTML = '<div class="card__img-fallback card__img-fallback--only">' + WATCH_PLACEHOLDER_SVG + '</div>';
   }
 
-  // Specs list
-  var specsHTML = '';
-  if (product.specs && product.specs.length) {
-    specsHTML = '<ul class="card__specs">'
-      + product.specs.map(function(s) {
-          return '<li class="card__spec-item">'
-            + '<span class="card__spec-label">' + s.label + '</span>'
-            + '<span class="card__spec-value">' + s.value + '</span>'
-            + '</li>';
-        }).join('')
-      + '</ul>';
-  }
+  var stockBadge = product.inStock !== false
+    ? '<span class="stock-badge stock-badge--in">En Stock</span>'
+    : '<span class="stock-badge stock-badge--out">Sin Stock</span>';
 
-  return '<article class="product-card reveal" data-category="' + product.category + '" style="--delay:' + (index * 80) + 'ms">'
-    + '<div class="card__image-wrapper">'
-    +   imageHTML
-    +   '<span class="card__category-tag">' + product.category + '</span>'
-    +   badge
-    + '</div>'
-    + '<div class="card__body">'
-    +   '<h3 class="card__name">' + product.name + '</h3>'
-    +   specsHTML
-    +   '<p class="card__description">' + product.description + '</p>'
-    +   '<div class="card__footer">'
-    +     '<span class="card__price">' + product.price + '</span>'
-    +     '<a href="' + whatsappURL(product.name) + '" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp" aria-label="Comprar ' + product.name + ' por WhatsApp">'
-    +       WA_ICON_SVG
-    +       ' Comprar'
-    +     '</a>'
+  return '<article class="product-card reveal" data-category="' + product.category + '" style="--delay:' + (index * 80) + 'ms" role="listitem">'
+    + '<a href="producto.html?id=' + product.id + '" class="card__link" aria-label="Ver detalles de ' + product.name + '">'
+    +   '<div class="card__image-wrapper">'
+    +     imageHTML
+    +     '<span class="card__category-tag">' + product.category + '</span>'
+    +     badge
     +   '</div>'
-    + '</div>'
+    +   '<div class="card__body">'
+    +     '<h3 class="card__name">' + product.name + '</h3>'
+    +     '<div class="card__footer">'
+    +       '<span class="card__price">' + product.price + '</span>'
+    +       stockBadge
+    +     '</div>'
+    +   '</div>'
+    + '</a>'
     + '</article>';
 }
 
+var PRODUCTS_PER_PAGE = 6;
+
 // ─── Render products ─────────────────────────────────────────
-function renderProducts(container, filter) {
+function renderProducts(container, filter, page) {
+  page = page || 1;
   var list = (!filter || filter === 'all')
     ? products
     : products.filter(function(p) { return p.category === filter; });
 
-  container.innerHTML = list.map(function(p, i) { return cardHTML(p, i); }).join('');
+  var total = list.length;
+  var start = (page - 1) * PRODUCTS_PER_PAGE;
+  var pageItems = list.slice(start, start + PRODUCTS_PER_PAGE);
+
+  container.innerHTML = pageItems.map(function(p, i) { return cardHTML(p, i); }).join('');
   observeReveal(container.querySelectorAll('.reveal'));
+  return total;
+}
+
+// ─── Pagination ───────────────────────────────────────────────
+function renderPagination(paginationEl, total, currentPage, filter, gridEl) {
+  var totalPages = Math.ceil(total / PRODUCTS_PER_PAGE);
+
+  if (totalPages <= 1) {
+    paginationEl.innerHTML = '';
+    return;
+  }
+
+  var html = '<nav class="pagination" aria-label="Paginación de productos">';
+
+  html += '<button class="pagination__btn pagination__btn--arrow"'
+    + (currentPage === 1 ? ' disabled aria-disabled="true"' : '')
+    + ' data-page="' + (currentPage - 1) + '" aria-label="Página anterior">&#8249;</button>';
+
+  for (var i = 1; i <= totalPages; i++) {
+    html += '<button class="pagination__btn pagination__num'
+      + (i === currentPage ? ' pagination__num--active' : '') + '"'
+      + ' data-page="' + i + '" aria-label="Página ' + i + '"'
+      + (i === currentPage ? ' aria-current="page"' : '') + '>' + i + '</button>';
+  }
+
+  html += '<button class="pagination__btn pagination__btn--arrow"'
+    + (currentPage === totalPages ? ' disabled aria-disabled="true"' : '')
+    + ' data-page="' + (currentPage + 1) + '" aria-label="Página siguiente">&#8250;</button>';
+
+  html += '</nav>';
+  paginationEl.innerHTML = html;
+
+  paginationEl.querySelectorAll('.pagination__btn:not([disabled])').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var page = parseInt(btn.dataset.page);
+
+      gridEl.style.opacity = '0';
+      gridEl.style.transform = 'translateY(8px)';
+
+      setTimeout(function() {
+        var newTotal = renderProducts(gridEl, filter, page);
+        renderPagination(paginationEl, newTotal, page, filter, gridEl);
+        gridEl.style.opacity = '1';
+        gridEl.style.transform = 'translateY(0)';
+
+        var section = document.getElementById('coleccion');
+        if (section) {
+          var top = section.getBoundingClientRect().top + window.scrollY - 70;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 200);
+    });
+  });
 }
 
 // ─── Filter buttons ──────────────────────────────────────────
-function initFilters(filtersEl, gridEl) {
+function initFilters(filtersEl, gridEl, paginationEl) {
   filtersEl.addEventListener('click', function(e) {
     var btn = e.target.closest('.filter-btn');
     if (!btn) return;
@@ -103,7 +152,9 @@ function initFilters(filtersEl, gridEl) {
     gridEl.style.transform = 'translateY(8px)';
 
     setTimeout(function() {
-      renderProducts(gridEl, btn.dataset.filter);
+      var filter = btn.dataset.filter;
+      var total = renderProducts(gridEl, filter, 1);
+      renderPagination(paginationEl, total, 1, filter, gridEl);
       gridEl.style.opacity = '1';
       gridEl.style.transform = 'translateY(0)';
     }, 200);
@@ -200,10 +251,12 @@ document.addEventListener('DOMContentLoaded', function() {
   initNavbar();
   initSmoothScroll();
 
-  var grid    = document.getElementById('productsGrid');
-  var filters = document.getElementById('productFilters');
-  renderProducts(grid, 'all');
-  initFilters(filters, grid);
+  var grid       = document.getElementById('productsGrid');
+  var filters    = document.getElementById('productFilters');
+  var pagination = document.getElementById('productsPagination');
+  var total      = renderProducts(grid, 'all', 1);
+  renderPagination(pagination, total, 1, 'all', grid);
+  initFilters(filters, grid, pagination);
 
   initScrollAnimations();
 });

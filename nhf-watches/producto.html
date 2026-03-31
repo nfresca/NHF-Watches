@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NHF Watches — Detalle</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner container">
+
+      <a href="index.html#inicio" class="navbar__logo">NHF <span>Watches</span></a>
+
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="index.html#inicio"    class="nav-link">Inicio</a></li>
+        <li><a href="index.html#coleccion" class="nav-link">Colección</a></li>
+        <li><a href="index.html#nosotros"  class="nav-link">Nosotros</a></li>
+        <li><a href="index.html#contacto"  class="nav-link">Contacto</a></li>
+      </ul>
+
+      <button
+        class="navbar__hamburger"
+        id="hamburger"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-detail">
+      <div class="container">
+        <a href="index.html#coleccion" class="product-detail__back">Volver a la colección</a>
+        <div id="productContent"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html#inicio" class="footer__logo">NHF <span>Watches</span></a>
+        <p>Relojes de precisión para quienes aprecian la excelencia artesanal. El tiempo, redefinido.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <p class="footer__nav-title">Navegación</p>
+        <ul class="footer__nav-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#coleccion">Colección</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="footer__social-title">Síguenos</p>
+        <div class="footer__social-links">
+          <a href="#" aria-label="Instagram de NHF Watches">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook de NHF Watches">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="WhatsApp de NHF Watches">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 NHF Watches. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">&#215;</button>
+    <button class="lightbox__btn lightbox__btn--prev" id="lightboxPrev" aria-label="Imagen anterior">&#8249;</button>
+    <img class="lightbox__img" id="lightboxImg" alt="">
+    <button class="lightbox__btn lightbox__btn--next" id="lightboxNext" aria-label="Imagen siguiente">&#8250;</button>
+    <span class="lightbox__counter" id="lightboxCounter"></span>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script>
+    // ─── Navbar scroll + hamburger ────────────────────────────
+    var navbar    = document.getElementById('navbar');
+    var hamburger = document.getElementById('hamburger');
+    var navLinks  = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', function() {
+      navbar.classList.toggle('navbar--scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    hamburger.addEventListener('click', function() {
+      var isOpen = navLinks.classList.toggle('navbar__links--open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.classList.toggle('hamburger--open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('navbar__links--open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.classList.remove('hamburger--open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ─── SVG placeholder ──────────────────────────────────────
+    var WATCH_PLACEHOLDER_SVG = '<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:80px;height:80px">'
+      + '<circle cx="40" cy="40" r="26" stroke="#b8922a" stroke-width="1.5" opacity="0.5"/>'
+      + '<circle cx="40" cy="40" r="20" stroke="#b8922a" stroke-width="1" opacity="0.3"/>'
+      + '<line x1="40" y1="24" x2="40" y2="20" stroke="#b8922a" stroke-width="1.5" opacity="0.6"/>'
+      + '<line x1="40" y1="60" x2="40" y2="56" stroke="#b8922a" stroke-width="1.5" opacity="0.6"/>'
+      + '<line x1="24" y1="40" x2="20" y2="40" stroke="#b8922a" stroke-width="1.5" opacity="0.6"/>'
+      + '<line x1="60" y1="40" x2="56" y2="40" stroke="#b8922a" stroke-width="1.5" opacity="0.6"/>'
+      + '<line x1="40" y1="40" x2="40" y2="29" stroke="#b8922a" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>'
+      + '<line x1="40" y1="40" x2="48" y2="40" stroke="#b8922a" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>'
+      + '<circle cx="40" cy="40" r="2" fill="#b8922a" opacity="0.8"/>'
+      + '<rect x="34" y="10" width="12" height="6" rx="2" fill="none" stroke="#b8922a" stroke-width="1" opacity="0.3"/>'
+      + '<rect x="34" y="64" width="12" height="6" rx="2" fill="none" stroke="#b8922a" stroke-width="1" opacity="0.3"/>'
+      + '</svg>';
+
+    var WA_ICON_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
+      + '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>'
+      + '</svg>';
+
+    function whatsappURL(productName) {
+      var msg = encodeURIComponent(
+        'Hola, me interesa el reloj *' + productName + '*. ¿Podría darme más información y el precio actualizado?'
+      );
+      return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg;
+    }
+
+    // ─── Carousel ─────────────────────────────────────────────
+    function buildCarouselHTML(images, productName, badge) {
+      var badgeHTML = badge ? '<span class="carousel__badge">' + badge + '</span>' : '';
+      var hasMultiple = images.length > 1;
+      var firstSrc = images[0] || '';
+
+      var mainImgHTML = firstSrc
+        ? '<img id="carouselMain" src="' + firstSrc + '" alt="' + productName + '" class="carousel__main-img"'
+          + ' onerror="this.style.display=\'none\';this.parentElement.classList.add(\'carousel__main-wrapper--fallback\')">'
+          + '<div class="carousel__fallback">' + WATCH_PLACEHOLDER_SVG + '</div>'
+        : '<div class="carousel__fallback carousel__fallback--only">' + WATCH_PLACEHOLDER_SVG + '</div>';
+
+      var navHTML = hasMultiple
+        ? '<button id="carouselPrev" class="carousel__btn carousel__btn--prev" aria-label="Imagen anterior">&#8249;</button>'
+          + '<button id="carouselNext" class="carousel__btn carousel__btn--next" aria-label="Imagen siguiente">&#8250;</button>'
+          + '<span class="carousel__counter" id="carouselCounter">1 / ' + images.length + '</span>'
+        : '';
+
+      var thumbsHTML = hasMultiple
+        ? '<div class="carousel__thumbs">'
+          + images.map(function(src, i) {
+              return '<button class="carousel__thumb' + (i === 0 ? ' carousel__thumb--active' : '') + '"'
+                + ' data-index="' + i + '" aria-label="Ver imagen ' + (i + 1) + '">'
+                + '<img src="' + src + '" alt="Imagen ' + (i + 1) + '">'
+                + '</button>';
+            }).join('')
+          + '</div>'
+        : '';
+
+      return '<div class="carousel">'
+        + '<div class="carousel__main-wrapper">'
+        +   mainImgHTML
+        +   navHTML
+        +   badgeHTML
+        + '</div>'
+        + thumbsHTML
+        + '</div>';
+    }
+
+    // ─── Carousel ─────────────────────────────────────────────
+    function initCarousel(images) {
+      if (images.length <= 1) return;
+      var current = 0;
+      var mainImg = document.getElementById('carouselMain');
+      var counter = document.getElementById('carouselCounter');
+      var thumbBtns = document.querySelectorAll('.carousel__thumb');
+      var prevBtn = document.getElementById('carouselPrev');
+      var nextBtn = document.getElementById('carouselNext');
+
+      function goTo(index) {
+        current = (index + images.length) % images.length;
+        mainImg.src = images[current];
+        if (counter) counter.textContent = (current + 1) + ' / ' + images.length;
+        thumbBtns.forEach(function(btn, i) {
+          btn.classList.toggle('carousel__thumb--active', i === current);
+        });
+      }
+
+      prevBtn.addEventListener('click', function() { goTo(current - 1); });
+      nextBtn.addEventListener('click', function() { goTo(current + 1); });
+      thumbBtns.forEach(function(btn, i) {
+        btn.addEventListener('click', function() { goTo(i); });
+      });
+
+      // Expose goTo for lightbox sync
+      return { goTo: goTo, getCurrent: function() { return current; } };
+    }
+
+    // ─── Lightbox ──────────────────────────────────────────────
+    function initLightbox(images) {
+      var lightbox   = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightboxImg');
+      var closeBtn   = document.getElementById('lightboxClose');
+      var prevBtn    = document.getElementById('lightboxPrev');
+      var nextBtn    = document.getElementById('lightboxNext');
+      var counter    = document.getElementById('lightboxCounter');
+      var mainImg    = document.getElementById('carouselMain');
+      var lbCurrent  = 0;
+
+      var hasMultiple = images.length > 1;
+
+      // Show/hide lightbox nav if only 1 image
+      prevBtn.style.display = hasMultiple ? '' : 'none';
+      nextBtn.style.display = hasMultiple ? '' : 'none';
+
+      function openAt(index) {
+        lbCurrent = (index + images.length) % images.length;
+        lightboxImg.src = images[lbCurrent];
+        if (hasMultiple) counter.textContent = (lbCurrent + 1) + ' / ' + images.length;
+        lightbox.classList.add('lightbox--open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.remove('lightbox--open');
+        document.body.style.overflow = '';
+      }
+
+      function lbGoTo(index) {
+        lbCurrent = (index + images.length) % images.length;
+        lightboxImg.src = images[lbCurrent];
+        if (hasMultiple) counter.textContent = (lbCurrent + 1) + ' / ' + images.length;
+      }
+
+      // Click on main carousel image → open lightbox at same index
+      if (mainImg) {
+        mainImg.addEventListener('click', function() {
+          // Find current carousel index by matching src
+          var idx = images.indexOf(mainImg.src);
+          // Fallback for when src is absolute but array has relative path
+          if (idx === -1) {
+            for (var i = 0; i < images.length; i++) {
+              if (mainImg.src.endsWith(images[i])) { idx = i; break; }
+            }
+          }
+          openAt(idx >= 0 ? idx : 0);
+        });
+      }
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function() { lbGoTo(lbCurrent - 1); });
+      nextBtn.addEventListener('click', function() { lbGoTo(lbCurrent + 1); });
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('lightbox--open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') lbGoTo(lbCurrent - 1);
+        if (e.key === 'ArrowRight') lbGoTo(lbCurrent + 1);
+      });
+    }
+
+    // ─── Render ───────────────────────────────────────────────
+    function renderDetail(product) {
+      document.title = 'NHF Watches — ' + product.name;
+
+      var images = product.images && product.images.length ? product.images : [];
+
+      var stockBadge = product.inStock !== false
+        ? '<span class="stock-badge stock-badge--in">En Stock</span>'
+        : '<span class="stock-badge stock-badge--out">Sin Stock</span>';
+
+      var conditionHTML = product.condition
+        ? '<p class="product-detail__condition"><strong>Condición:</strong> ' + product.condition + '</p>'
+        : '';
+
+      var specsHTML = '';
+      if (product.specs && product.specs.length) {
+        specsHTML = '<div>'
+          + '<p class="product-detail__specs-title">Especificaciones</p>'
+          + '<ul class="product-detail__specs">'
+          + product.specs.map(function(s) {
+              return '<li class="product-detail__spec-item">'
+                + '<span class="product-detail__spec-label">' + s.label + '</span>'
+                + '<span class="product-detail__spec-value">' + s.value + '</span>'
+                + '</li>';
+            }).join('')
+          + '</ul>'
+          + '</div>';
+      }
+
+      document.getElementById('productContent').innerHTML =
+        '<div class="product-detail__grid">'
+        + buildCarouselHTML(images, product.name, product.badge)
+        + '<div class="product-detail__info">'
+        +   '<p class="product-detail__category">' + product.category + '</p>'
+        +   '<h1 class="product-detail__name">' + product.name + '</h1>'
+        +   '<p class="product-detail__price">' + product.price + '</p>'
+        +   '<div class="product-detail__meta">'
+        +     stockBadge
+        +     conditionHTML
+        +   '</div>'
+        +   '<div class="product-detail__divider"></div>'
+        +   '<p class="product-detail__description">' + product.description + '</p>'
+        +   specsHTML
+        +   '<div class="product-detail__actions">'
+        +     '<a href="' + whatsappURL(product.name) + '" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp">'
+        +       WA_ICON_SVG + ' Consultar por WhatsApp'
+        +     '</a>'
+        +   '</div>'
+        + '</div>'
+        + '</div>';
+
+      initCarousel(images);
+      initLightbox(images);
+    }
+
+    function renderNotFound() {
+      document.getElementById('productContent').innerHTML =
+        '<div class="product-detail__not-found">'
+        + '<h2>Producto no encontrado</h2>'
+        + '<p>El reloj que buscás no existe en nuestro catálogo.</p>'
+        + '<a href="index.html#coleccion" class="btn btn--primary" style="margin-top:2rem;display:inline-flex">Ver colección</a>'
+        + '</div>';
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var id = parseInt(params.get('id'), 10);
+    var product = products.find(function(p) { return p.id === id; });
+
+    if (product) {
+      renderDetail(product);
+    } else {
+      renderNotFound();
+    }
+  </script>
+
+</body>
+</html>
