@@ -17,10 +17,10 @@ var products = [
     category: 'Clásico',
     price: '$225 USD',
     images: [
-      'img/SNXS77_1.jpg',
-      'img/SNXS77_2.jpg',
-      'img/SNXS77_3.jpg',
-      'img/SNXS77_4.jpg'
+      'img/SNXS77_1.png',
+      'img/SNXS77_2.png',
+      'img/SNXS77_3.png',
+      'img/SNXS77_4.png'
     ],
     condition: 'NUEVO CON CAJA Y PAPELES',
     inStock: true,
