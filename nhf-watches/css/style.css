@@ -746,6 +746,78 @@ section {
   border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
+.stock-badge--order {
+  background: rgba(120, 120, 120, 0.1);
+  color: #6b7280;
+  border: 1px solid rgba(120, 120, 120, 0.3);
+}
+
+/* Tooltip "?" inside stock badges */
+.stock-badge__tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.stock-badge__q {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  font-size: 0.55rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: default;
+  flex-shrink: 0;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+  transition: opacity 200ms ease;
+}
+
+.stock-badge__q:hover {
+  opacity: 1;
+}
+
+.stock-badge__tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #e5e5e5;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  line-height: 1.45;
+  padding: 0.45rem 0.65rem;
+  border-radius: 4px;
+  white-space: normal;
+  width: 160px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.stock-badge__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1a1a1a;
+}
+
+.stock-badge__tooltip-wrap:hover .stock-badge__tooltip {
+  display: block;
+}
+
 /* ============================================================
    PRODUCT DETAIL PAGE
    ============================================================ */
@@ -893,6 +965,8 @@ section {
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: 1.8;
+  white-space: pre-line;
+  text-align: justify;
 }
 
 .product-detail__specs-title {

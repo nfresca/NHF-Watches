@@ -49,7 +49,7 @@ function cardHTML(product, index) {
 
   var stockBadge = product.inStock !== false
     ? '<span class="stock-badge stock-badge--in">En Stock</span>'
-    : '<span class="stock-badge stock-badge--out">Sin Stock</span>';
+    : '<span class="stock-badge stock-badge--order">Por encargo</span>';
 
   return '<article class="product-card reveal" data-category="' + product.category + '" style="--delay:' + (index * 80) + 'ms" role="listitem">'
     + '<a href="producto.html?id=' + product.id + '" class="card__link" aria-label="Ver detalles de ' + product.name + '">'

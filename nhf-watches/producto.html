@@ -306,8 +306,8 @@
       var images = product.images && product.images.length ? product.images : [];
 
       var stockBadge = product.inStock !== false
-        ? '<span class="stock-badge stock-badge--in">En Stock</span>'
-        : '<span class="stock-badge stock-badge--out">Sin Stock</span>';
+        ? '<span class="stock-badge stock-badge--in">En Stock<span class="stock-badge__tooltip-wrap"><span class="stock-badge__q">?</span><span class="stock-badge__tooltip">Producto disponible para entrega inmediata.</span></span></span>'
+        : '<span class="stock-badge stock-badge--order">Por encargo<span class="stock-badge__tooltip-wrap"><span class="stock-badge__q">?</span><span class="stock-badge__tooltip">Este reloj se consigue bajo pedido. Consultanos por WhatsApp para más información.</span></span></span>';
 
       var conditionHTML = product.condition
         ? '<p class="product-detail__condition"><strong>Condición:</strong> ' + product.condition + '</p>'
@@ -340,7 +340,7 @@
         +     conditionHTML
         +   '</div>'
         +   '<div class="product-detail__divider"></div>'
-        +   '<p class="product-detail__description">' + product.description + '</p>'
+        +   '<div class="product-detail__description">' + product.description + '</div>'
         +   specsHTML
         +   '<div class="product-detail__actions">'
         +     '<a href="' + whatsappURL(product.name) + '" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp">'
