@@ -1027,6 +1027,102 @@ section {
   font-weight: 500;
 }
 
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq {
+  background: var(--color-surface-2);
+}
+
+.faq__list {
+  max-width: 700px;
+  margin-inline: auto;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.faq__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--transition);
+}
+
+.faq__item--open::before {
+  transform: scaleY(1);
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-3);
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  transition: color var(--transition);
+}
+
+.faq__question:hover {
+  color: var(--color-accent);
+}
+
+.faq__item--open .faq__question {
+  color: var(--color-accent);
+}
+
+.faq__icon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  opacity: 0.6;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.faq__item--open .faq__icon {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.faq__body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq__item--open .faq__body {
+  max-height: 200px;
+}
+
+.faq__answer {
+  padding: 0 var(--space-3) var(--space-4);
+}
+
+.faq__answer p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-border);
+}
+
 .product-detail__actions {
   display: flex;
   gap: var(--space-3);
@@ -1340,14 +1436,14 @@ section {
 
 .contact__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  max-width: 700px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  max-width: 960px;
   margin-inline: auto;
 }
 
-@media (min-width: 500px) {
-  .contact__grid { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 700px) {
+  .contact__grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .contact-card {
@@ -1355,8 +1451,8 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--space-3);
-  padding: var(--space-6) var(--space-4);
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -1364,23 +1460,33 @@ section {
 }
 
 .contact-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-card);
 }
 
 .contact-card--whatsapp:hover {
-  border-color: rgba(37, 211, 102, 0.3);
-  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.1);
+  border-color: rgba(37, 211, 102, 0.35);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.1);
+}
+
+.contact-card--instagram:hover {
+  border-color: rgba(225, 48, 108, 0.3);
+  box-shadow: 0 8px 32px rgba(225, 48, 108, 0.08);
+}
+
+.contact-card--facebook:hover {
+  border-color: rgba(24, 119, 242, 0.3);
+  box-shadow: 0 8px 32px rgba(24, 119, 242, 0.08);
 }
 
 .contact-card--email:hover {
-  border-color: rgba(201, 168, 76, 0.3);
+  border-color: rgba(184, 146, 42, 0.35);
   box-shadow: var(--shadow-card-hover);
 }
 
 .contact-card__icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1393,8 +1499,18 @@ section {
   color: var(--color-whatsapp);
 }
 
+.contact-card--instagram .contact-card__icon {
+  background: rgba(225, 48, 108, 0.08);
+  color: #e1306c;
+}
+
+.contact-card--facebook .contact-card__icon {
+  background: rgba(24, 119, 242, 0.08);
+  color: #1877f2;
+}
+
 .contact-card--email .contact-card__icon {
-  background: rgba(201, 168, 76, 0.1);
+  background: rgba(184, 146, 42, 0.1);
   color: var(--color-accent);
 }
 
@@ -1406,15 +1522,10 @@ section {
   color: var(--color-text-muted);
 }
 
-.contact-card__value {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--color-text);
-}
-
 .contact-card__cta {
   margin-top: auto;
+  font-size: var(--text-xs);
+  padding: 0.55rem 1.2rem;
 }
 
 /* ============================================================
