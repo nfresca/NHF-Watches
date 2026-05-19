@@ -1435,33 +1435,51 @@ section {
 }
 
 .contact__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
-  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 560px;
   margin-inline: auto;
 }
 
 @media (min-width: 700px) {
-  .contact__grid { grid-template-columns: repeat(4, 1fr); }
+  .contact__grid {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 960px;
+    gap: var(--space-3);
+  }
+  .contact__grid .contact-card { flex: 1; }
 }
 
 .contact-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
-  gap: var(--space-2);
-  padding: var(--space-4) var(--space-3);
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   transition: all var(--transition);
 }
 
+@media (min-width: 700px) {
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-4) var(--space-3);
+    gap: var(--space-2);
+  }
+}
+
 .contact-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 699px) {
+  .contact-card:hover { transform: none; }
 }
 
 .contact-card--whatsapp:hover {
@@ -1485,13 +1503,17 @@ section {
 }
 
 .contact-card__icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+@media (min-width: 700px) {
+  .contact-card__icon { width: 48px; height: 48px; }
 }
 
 .contact-card--whatsapp .contact-card__icon {
@@ -1520,12 +1542,22 @@ section {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+  flex: 1;
+}
+
+@media (min-width: 700px) {
+  .contact-card__label { flex: unset; }
 }
 
 .contact-card__cta {
   margin-top: auto;
   font-size: var(--text-xs);
   padding: 0.55rem 1.2rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 699px) {
+  .contact-card__cta { margin-top: 0; }
 }
 
 /* ============================================================
